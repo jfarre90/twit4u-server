@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const errorHandler = require('./handlers/error');
 const authRoutes = require('./routes/auth');
 const messagesRoutes = require('./routes/messages');
-const { loginRequired, ensureCorrectUser } = require('./middleware/awth');
-const db = require("./models/index");
+const { loginRequired, ensureCorrectUser } = require('./middleware/auth');
+const db = require("./models");
 
 const PORT = process.env.PORT || 8081;
 

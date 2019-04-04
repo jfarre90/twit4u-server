@@ -1,4 +1,4 @@
-const db = require('./models');
+const db = require('../models');
 
 exports.createMessage = async function(req,res,next) {
    try{
