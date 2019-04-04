@@ -39,11 +39,10 @@ exports.signin = async function(req, res, next) {
             });
     }
     
-}
+};
     //Checking if ther password matches what was sent to the server
     //if it all matches
-        //log them in
-};
+        //log them 
 
 
 //signoup logic
@@ -80,8 +79,8 @@ exports.signup = async function(req, res, next) {
         return next({
             status: 400,
             message: err.message
-        })
+        });
         
         
     }
-}
+};
