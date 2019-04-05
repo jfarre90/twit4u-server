@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors'); // cors is a module to solve the issues of cross-origin referencing, where javascript limits us that the js can only come from the same source and not from external sources.

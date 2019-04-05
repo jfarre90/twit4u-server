@@ -2,7 +2,7 @@ const db = require('../models');
 
 exports.createMessage = async function(req,res,next) {
    try{
-       let message = await db.message.create({
+       let message = await db.Message.create({
            text: req.body.text,
            user: req.params.id //this id will be in the URL and we will grab it from there.
        });
@@ -14,8 +14,10 @@ exports.createMessage = async function(req,res,next) {
            profileImageUrl: true
        });
        return res.status(200).json(foundMessage);
-   } catch(e) {}
-}
+   } catch(e) {
+       return next(e);
+   }
+};
 
 //GET /api/users/:id/messages/:messages_id
 exports.getMessage = async function(req,res,next) {
