@@ -33,7 +33,7 @@ exports.getMessage = async function(req,res,next) {
 //DELETE /api/users/:id/messages/:messages_id
 exports.deleteMessage = async function(req,res,next) {
     try {
-        let foundMessage = await db.Message.findById(req.params.message._id);
+        let foundMessage = await db.Message.findById(req.params.message_id);
         await foundMessage.remove(); //remove method declared in the message model. We cannot use the mongoose method findByIdAndRemove as it would not delete the message id in the user model.
         return res.satatus(200).json(foundMessage)
     } catch (e) {
